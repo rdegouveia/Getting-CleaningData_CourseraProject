@@ -18,7 +18,7 @@ There are two other files called activity_labels.txt with the list of activities
 ##FUNCTION
 The following function creates a table with the average of each variable for each activity and each subject.
 
-1st: it creates a data frame called output with the names of activities instead of numbers given by table y_train.txt. Then it merges subject_train.txt, output.
+1st: it creates a data frame called output with the names of activities instead of numbers given by table y_train.txt. Then it merges subject_train.txt, output as follows:
 
 <!-- -->
 
@@ -28,8 +28,10 @@ The following function creates a table with the average of each variable for eac
      X_train<-read.table("./UCI HAR Dataset/train/X_train.txt",header=F)
      Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
      output<-vector()
+     
      #It evaluates each line of Y_train then create a vector called output with the activities names. If Y_train[i,1]==1 then 
-     #the activitie will be "Walking", if ==2 activity="Walking_Uptairs", etc. 
+     #the activity will be "Walking", if Y_train[i,1]==2 activity will be "Walking_Uptairs", etc.
+     
      For (i in 1:nrow(Y_train)){
        value_Ytrain<-Y_train[i,1]
         if (value_Ytrain==1) {
@@ -57,7 +59,10 @@ The following function creates a table with the average of each variable for eac
          }
         output<-append(output,activity_value)
       }
-      #Transform the vector output to a data.frame and add a column with the subjects. 
+      
+      #Transform the vector output to a data.frame and add a column with the subjects. The results is a data frame called 
+      #output with the name of activities performed by subjects_train.
+      
       output<-as.data.frame(matrix(output,nrow(Y_train),1,byrow=T))
       colnames(output)<-c("Activity")
       colnames(subject_train)<-c("Subject")
