@@ -27,6 +27,7 @@ run_analysis <- function() {
   output <- vector()
   for (i in 1:nrow(Y_train)) {
     value_Ytrain <- Y_train[i,1]
+    
     if (value_Ytrain == 1) {
       activity_value <- c("WALKING")
       } else {
