@@ -67,7 +67,7 @@ run_analysis <- function() {
   colnames(subject_train)<-c("Subject")
   
   output<-cbind(subject_train,output)
-
+}
 
 
 
