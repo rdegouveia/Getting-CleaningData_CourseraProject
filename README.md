@@ -81,7 +81,8 @@ At the beginning the function merges the train set. It means the tables: X_train
     for(i in 1:length(X_train)){
         setnames(X_train,old=as.character(col_Xtrain[i]),new=as.character(new_name[i]))
     }
-    #Then merges X_train with new column's name and output. The results is a data frame called output_1 with subjects,            #variables measured and activities from train set:
+    #Then merges X_train with new column's name and output. The results is a data frame called output_1 
+    #with subjects, variables measured and activities from train set:
     output_1<-cbind(output_1,X_test)
 
 
