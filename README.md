@@ -130,6 +130,9 @@ It creates subset with column's names of X_train. It creates a subset with the 2
      for(i in 1:length(X_test)){
         setnames(X_test,old=as.character(col_Xtest[i]),new=as.character(new_name[i]))
         }
+        
+    #The results is a data frame called output 
+    with subjects, variables measured and activities from test set:
     output_1<-cbind(output_1,X_test)
 
 
