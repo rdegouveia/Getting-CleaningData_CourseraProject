@@ -21,7 +21,7 @@ The following function creates a table with the average of each variable for eac
 
 <!-- -->
 
-  run_analysis<-function() {
+    run_analysis<-function() {
      features<-read.table("./UCI HAR Dataset/features.txt", header=F)
      subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt", header=F)
      X_train<-read.table("./UCI HAR Dataset/train/X_train.txt",header=F)
