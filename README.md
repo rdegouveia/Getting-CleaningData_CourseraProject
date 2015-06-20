@@ -21,18 +21,31 @@ The following function creates a table with the average of each variable for eac
 
 <!-- -->
   run_analysis<-function() {
+  
      features<-read.table("./UCI HAR Dataset/features.txt", header=F)
+     
      subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt", header=F)
+     
      X_train<-read.table("./UCI HAR Dataset/train/X_train.txt",header=F)
+     
      Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
+     
      output<-vector()
-     For (i in 1:nrow(Y_train)) {
+     
+     For (i in 1:nrow(Y_train)){
+     
        value_Ytrain<-Y_train[i,1]
+       
         if (value_Ytrain==1) {
+        
           activity_value<-c("WALKING")
+          
           }else{
+          
             if (value_Ytrain==2){
+            
               activity_value<-c("WALKING_UPSTAIRS")
+              
               }else{
                 if (value_Ytrain == 3){
                   activity_value <- c("WALKING_DOWNSTAIRS")
