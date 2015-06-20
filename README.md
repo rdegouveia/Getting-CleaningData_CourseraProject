@@ -57,7 +57,7 @@ The following function creates a table with the average of each variable for eac
     colnames(output)<-c("Activity")
     colnames(subject_train)<-c("Subject")
     output<-cbind(subject_train,output)
-}
+  }
 
 
 
