@@ -135,6 +135,6 @@ It creates subset with column's names of X_train. It creates a subset with the 2
     with subjects, variables measured and activities from test set:
     output_1<-cbind(output_1,X_test)
 
-
+Finally the function merges output and output_1. The results is a data frame called mergedata with train and test sets. All columns were renamed with the features.txt file and labels from y_train.txt and y_test.txt files were renamed with the activities names. 
 
 
