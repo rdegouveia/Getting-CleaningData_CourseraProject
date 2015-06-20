@@ -20,7 +20,7 @@ The following function creates a table with the average of each variable for eac
 
 The function merges train and test set as follows:
 
-1st: The function merges the train set. It means the tables: X_train,Y_train, replacing Y_train with the activities names and replacing column's names of X_train with names from features.txt. 
+1st: The function merges the train set. It means the tables: X_train,Y_train, replacing y_train with the activities names and replacing column's names of X_train with names from features.txt. 
 
 It creates a data frame called output with the names of activities instead of labels given by table y_train.txt. Then it merges subject_train.txt and output as follows:
 
@@ -87,7 +87,7 @@ It creates subset with column's names of X_train. It creates a subset with the 2
     #with subjects, variables measured and activities from train set:
     output<-cbind(output,X_train)
 
-2nd: then the function merges the test set. It means the tables: X_test,Y_test, replacing Y_test with the activities names and replacing column's names of X_test with names from features.txt. Same steps saw above but in this case with files from test set.
+2nd: then the function merges the test set. It means the tables: X_test,Y_test, replacing y_test with the activities names and replacing column's names of X_test with names from features.txt. Same steps saw above but in this case with files from test set.
 
 <!-- -->
 
