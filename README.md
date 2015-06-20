@@ -20,22 +20,22 @@ The following function creates a table with the average of each variable for eac
 1st: it creates a data frame called output with the names of activities instead of numbers given by table y_train.txt. Then it merges subject_train.txt, output.
 
 run_analysis <- function() {
-    features <- read.table("./UCI HAR Dataset/features.txt",header=F)
-    subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt",header = F)
-    X_train <- read.table("./UCI HAR Dataset/train/X_train.txt",header = F)
-    Y_train <- read.table("./UCI HAR Dataset/train/Y_train.txt",header = F)
-    output <- vector()
-    for(i in 1:nrow(Y_train)){
-     value_Ytrain<-Y_train[i,1]
-       if(value_Ytrain==1){
-         activity_value<-c("WALKING")
-         }else{
-            if(value_Ytrain==2){
-               activity_value<-c("WALKING_UPSTAIRS")
-        }else{
-          if(value_Ytrain==3){
-            activity_value<-c("WALKING_DOWNSTAIRS")
-          }else{
+  features <- read.table("./UCI HAR Dataset/features.txt", header = F)
+  subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt", header = F)
+  X_train <- read.table("./UCI HAR Dataset/train/X_train.txt", header = F)
+  Y_train <- read.table("./UCI HAR Dataset/train/Y_train.txt", header = F)
+  output <- vector()
+  for (i in 1:nrow(Y_train)) {
+    value_Ytrain <- Y_train[i,1]
+    if (value_Ytrain == 1) {
+      activity_value <- c("WALKING")
+      } else {
+        if (value_Ytrain == 2) {
+          activity_value <- c("WALKING_UPSTAIRS")
+        } else {
+          if (value_Ytrain == 3) {
+            activity_value <- c("WALKING_DOWNSTAIRS")
+          } else {
             if(value_Ytrain==4){
               activity_value<-c("SITTING")
             }else{
@@ -52,7 +52,6 @@ run_analysis <- function() {
       }
     output<-append(output,activity_value)
   }
-  
   output<-as.data.frame(matrix(output,nrow(Y_train),1,byrow=T))
   colnames(output)<-c("Activity")
   colnames(subject_train)<-c("Subject")
