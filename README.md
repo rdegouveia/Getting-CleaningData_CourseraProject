@@ -20,7 +20,7 @@ The following function creates a table with the average of each variable for eac
 
 At the beginning the function merges the train set. It means the tables: X_train,Y_train replacing Y_train with the activities names and replacing column's names of X_train with names from features.txt. 
 
-1st: it creates a data frame called output with the names of activities instead of numbers given by table y_train.txt. Then it merges subject_train.txt, output as follows:
+1st: it creates a data frame called output with the names of activities instead of labels given by table y_train.txt. Then it merges subject_train.txt, output as follows:
 
 <!-- -->
 
