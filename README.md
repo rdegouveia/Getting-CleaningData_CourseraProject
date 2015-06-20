@@ -20,22 +20,15 @@ The following function creates a table with the average of each variable for eac
 1st: it creates a data frame called output with the names of activities instead of numbers given by table y_train.txt. Then it merges subject_train.txt, output.
 
 run_analysis<-function(){
-  features<-read.table("./UCI HAR Dataset/features.txt",header=F)
-  
-  subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt",header=F)
-  
-  X_train<-read.table("./UCI HAR Dataset/train/X_train.txt",header=F)
-  
-  Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
-  
-  output<-vector()
-  
+   features<-read.table("./UCI HAR Dataset/features.txt",header=F)
+   subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt",header=F)
+   X_train<-read.table("./UCI HAR Dataset/train/X_train.txt",header=F)
+   Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
+   output<-vector()
   for(i in 1:nrow(Y_train)){
-  
    value_Ytrain<-Y_train[i,1]
    
-    if(value_Ytrain==1){
-    
+   if(value_Ytrain==1){
       activity_value<-c("WALKING")
       }else{
         if(value_Ytrain==2){
