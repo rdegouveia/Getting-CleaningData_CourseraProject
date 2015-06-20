@@ -25,7 +25,6 @@ run_analysis<-function(){
   X_train<-read.table("./UCI HAR Dataset/train/X_train.txt",header=F)
   Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
   output<-vector()
-  # For each value of Y_train the functions create a new vector with the activity name. 
   for(i in 1:nrow(Y_train)){
     value_Ytrain<-Y_train[i,1]
     if(value_Ytrain==1){
