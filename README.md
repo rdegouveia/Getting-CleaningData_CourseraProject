@@ -18,6 +18,8 @@ There are two other files called activity_labels.txt with the list of activities
 ##FUNCTION
 The following function creates a table with the average of each variable for each activity and each subject.
 
+At the beginning the function merges the train set. It means the tables: X_train,Y_train replacing Y_train with the activities names and replacing column's names of X_train with names from features.txt. 
+
 1st: it creates a data frame called output with the names of activities instead of numbers given by table y_train.txt. Then it merges subject_train.txt, output as follows:
 
 <!-- -->
@@ -67,6 +69,19 @@ The following function creates a table with the average of each variable for eac
       colnames(output)<-c("Activity")
       colnames(subject_train)<-c("Subject")
       output<-cbind(subject_train,output)
+
+2nd: subset column's names of X_train. It creates a subset with the 2nd column of features.txt which are the names of variables measured. Then it replaces the names of the columns of X_train with the names from features.txt. Using setnames from library data.table as follows:
+
+<!-- -->
+
+    library(data.table)
+    col_Xtrain<-names(X_train)
+    new_name<-features[,2]
+    #It evaluates names(X_train)[i] and replace with a new name from features.txt with the subset new_name[i]
+    for(i in 1:length(X_train)){
+        setnames(X_train,old=as.character(col_Xtrain[i]),new=as.character(new_name[i]))
+    }
+
 
 
 
