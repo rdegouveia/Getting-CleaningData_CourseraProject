@@ -26,6 +26,7 @@ run_analysis<-function(){
   Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
   
   output<-vector()
+  
   for(i in 1:nrow(Y_train)){
    value_Ytrain<-Y_train[i,1]
     if(value_Ytrain==1){
@@ -57,6 +58,7 @@ run_analysis<-function(){
   colnames(output)<-c("Activity")
   colnames(subject_train)<-c("Subject")
   output<-cbind(subject_train,output)
+  }
 
 
 
