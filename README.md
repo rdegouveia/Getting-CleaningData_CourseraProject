@@ -60,8 +60,8 @@ The following function creates a table with the average of each variable for eac
         output<-append(output,activity_value)
       }
       
-      #Transform the vector output to a data.frame and add a column with the subjects. The results is a data frame called 
-      #output with the name of activities performed by subjects_train.
+      #Transform the vector output to a data.frame and add a column with the subjects. The results is a data frame 
+      #called output with the name of activities performed by subjects_train.
       
       output<-as.data.frame(matrix(output,nrow(Y_train),1,byrow=T))
       colnames(output)<-c("Activity")
