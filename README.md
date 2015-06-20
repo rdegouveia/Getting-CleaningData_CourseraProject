@@ -18,9 +18,11 @@ There are two other files called activity_labels.txt with the list of activities
 ##FUNCTION
 The following function creates a table with the average of each variable for each activity and each subject.
 
-At the beginning the function merges the train set. It means the tables: X_train,Y_train replacing Y_train with the activities names and replacing column's names of X_train with names from features.txt. 
+The function merges train and test set as follows:
 
-1st: it creates a data frame called output with the names of activities instead of labels given by table y_train.txt. Then it merges subject_train.txt, output as follows:
+1st: The function merges the train set. It means the tables: X_train,Y_train, replacing Y_train with the activities names and replacing column's names of X_train with names from features.txt. 
+
+It creates a data frame called output with the names of activities instead of labels given by table y_train.txt. Then it merges subject_train.txt and output as follows:
 
 <!-- -->
 
@@ -31,7 +33,7 @@ At the beginning the function merges the train set. It means the tables: X_train
      Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
      output<-vector()
      
-     #It evaluates each line of Y_train then create a vector called output with the activities names. If Y_train[i,1]==1 then 
+     #It evaluates each line of Y_train then creates a vector called output with the activities names. If Y_train[i,1]==1 then
      #the activity will be "Walking", if Y_train[i,1]==2 activity will be "Walking_Uptairs", etc.
      
      For (i in 1:nrow(Y_train)){
@@ -70,7 +72,7 @@ At the beginning the function merges the train set. It means the tables: X_train
       colnames(subject_train)<-c("Subject")
       output<-cbind(subject_train,output)
 
-2nd: subset column's names of X_train. It creates a subset with the 2nd column of features.txt which are the names of variables measured. Then it replaces the names of the columns of X_train with the names from features.txt. Using setnames from library data.table.
+It creates subset with column's names of X_train. It creates a subset with the 2nd column of features.txt which are the names of variables measured. Then it replaces the names of the columns of X_train with the names from features.txt. Using setnames from library data.table.
 
 <!-- -->
 
@@ -81,11 +83,54 @@ At the beginning the function merges the train set. It means the tables: X_train
     for(i in 1:length(X_train)){
         setnames(X_train,old=as.character(col_Xtrain[i]),new=as.character(new_name[i]))
     }
-    #Then merges X_train with new column's name and output. The results is a data frame called output_1 
+    #Then it merges X_train and output. The results is a data frame called output 
     #with subjects, variables measured and activities from train set:
+    output<-cbind(output,X_train)
+
+2nd: then the function merges the test set. It means the tables: X_test,Y_test, replacing Y_test with the activities names and replacing column's names of X_test with names from features.txt. Same steps saw above but in this case with files from test set.
+
+<!-- -->
+
+     X_test<-read.table("./UCI HAR Dataset/test/X_test.txt",header=F)
+     Y_test<-read.table("./UCI HAR Dataset/test/Y_test.txt",header=F)
+     subject_test<-read.table("./UCI HAR Dataset/test/subject_test.txt",header=F)
+     output_1<-vector()
+     for(i in 1:nrow(Y_test)){
+      value_Ytest<-Y_test[i,1]
+      if(value_Ytest==1){
+        activity_value<-c("WALKING")
+        }else{
+          if(value_Ytest==2){
+            activity_value<-c("WALKING_UPSTAIRS")
+            }else{
+              if(value_Ytest==3){
+                activity_value<-c("WALKING_DOWNSTAIRS")
+                }else{
+                  if(value_Ytest==4){
+                    activity_value<-c("SITTING")
+                    }else{
+                      if(value_Ytest==5){
+                        activity_value<-c("STANDING")
+                        }else{
+                           if(value_Ytest==6){
+                            activity_value<-c("LAYING")
+                            }
+                        }
+                    }
+                 }
+            }
+        }
+     output_1<-append(output_1,activity_value)
+    }
+     output_1<-as.data.frame(matrix(output_1,nrow(Y_test),1,byrow=T))
+     colnames(output_1)<-c("Activity")
+     colnames(subject_test)<-c("Subject")
+     output_1<-cbind(subject_test,output_1)
+     col_Xtest<-names(X_test)
+     for(i in 1:length(X_test)){
+        setnames(X_test,old=as.character(col_Xtest[i]),new=as.character(new_name[i]))
+        }
     output_1<-cbind(output_1,X_test)
-
-
 
 
 
