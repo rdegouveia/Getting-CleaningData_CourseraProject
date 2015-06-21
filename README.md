@@ -157,7 +157,7 @@ Finally the function merges output and output_1. The results is a data frame cal
      #The function creates a subset called df from mergedata in which the column's names have the words: "mean.." or "std..".
      df<-subset(mergedata,select=c(grep("mean..",colnames(mergedata),fixed=T,value=T),grep("std..",colnames(mergedata),fixed=      T,value=T)))
      
-     #The merges the subjects, activities and the subset df as follows:
+     #Then merges the subjects, activities and the subset df as follows:
      df1<-cbind(col_subject,col_activity,df)
 
 3rd: and then calculate the average of each variable, for each activity and each subject. 
