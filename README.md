@@ -17,8 +17,11 @@ There are two other files called activity_labels.txt with the list of activities
 
 ##FUNCTION
 The following function creates a data frame with the average of each variable for each activity and each subject. Before calculating the average the function:
+
 1st: merges train and test set,  renames columns and activities.
+
 2nd: extracts the measurements on the mean and standard deviation for each measurement
+
 3rd: and then calculate the average of each variable, for each activity and each subject. 
 
 1st: The function merges train and test set as follows:
@@ -141,7 +144,7 @@ Then the function merges the test set. It means the tables: X_test,y_test, repla
 
 Finally the function merges output and output_1. The results is a data frame called mergedata with train and test sets. All columns were renamed with the features.txt file and labels from y_train.txt and y_test.txt files were renamed with the activities names. 
 
-The function
+2nd: extracts the measurements on the mean and standard deviation for each measurement
 
 <!-- -->
 
