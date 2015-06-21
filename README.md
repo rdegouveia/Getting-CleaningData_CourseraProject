@@ -16,7 +16,7 @@ There are two other files called activity_labels.txt with the list of activities
 
 
 ##FUNCTION
-The following function creates a data frame with the average of each variable for each activity and each subject. Before calculating the average the function:
+The following function creates a data frame called course_project.txt with the average of each variable for each activity and each subject. Before calculating the average the function:
 
 1st: merges train and test set,  renames columns and activities.
 
@@ -148,9 +148,14 @@ Finally the function merges output and output_1. The results is a data frame cal
 
 <!-- -->
 
-col_subject<-as.data.frame(mergedata[,1:1])
-  col_activity<-as.data.frame(mergedata[,2:2])
-  colnames(col_subject)<-c("Subject")
-  colnames(col_activity)<-c("Activity")
-  df<-subset(mergedata,select=c(grep("mean..",colnames(mergedata),fixed=T,value=T),grep("std..",colnames(mergedata),fixed=T,value=T)))
-  df1<-cbind(col_subject,col_activity,df)
+     #The fucntion createas 2 subsets with the activities and subjects.
+     col_subject<-as.data.frame(mergedata[,1:1])
+     col_activity<-as.data.frame(mergedata[,2:2])
+     colnames(col_subject)<-c("Subject")
+     colnames(col_activity)<-c("Activity")
+     
+     #The function creates a subset called df from mergedata in which colnames has the words "mean.." or "std..".
+     df<-subset(mergedata,select=c(grep("mean..",colnames(mergedata),fixed=T,value=T),grep("std..",colnames(mergedata),fixed=      T,value=T)))
+     
+     #The merges the subjects, activities and the subset df.
+     df1<-cbind(col_subject,col_activity,df)
