@@ -159,3 +159,44 @@ Finally the function merges output and output_1. The results is a data frame cal
      
      #The merges the subjects, activities and the subset df as follows:
      df1<-cbind(col_subject,col_activity,df)
+
+3rd: and then calculate the average of each variable, for each activity and each subject. 
+
+<!-- -->
+
+    activity_labels<-read.table("./UCI HAR Dataset/activity_labels.txt",header=F)
+    activity<-as.data.frame(activity_labels[,2])
+    #Creates a subset from 2nd of activity_labels.
+    colnames(activity)<-c("Activity")
+    output_2<-data.frame()
+    output_3<-data.frame()
+    for(i in 1:30){
+    #Creates a subset called new_subset in which df1 takes the values from 1 to 30.
+      new_subset<-df1[which(df1$Subject==i),]
+      for(j in 1:6){
+      
+      #Then assing an activity value. If j==1 then activity == "WALKING". The function create 
+      #data frame in which the subject takes value i and activity takes value j. This data frame
+      #is called data_2average.
+      
+       subset_byactivity<-activity_labels[j,2]
+       data_2average<-new_subset[which(new_subset$Activity==subset_byactivity),]
+       data_2average[,2:2]<-NULL
+       
+      #Create a vector called new_vector with the average of each columns (for subject i & activity j) 
+      #from data_2average. 
+       new_vector<-as.data.frame(lapply(data_2average,mean))
+     
+      #Then merges output_2 with this new vector, creating a data frame 
+      with the average of each column for each subject.
+       output_2<-rbind(output_2,new_vector)
+      }
+      #Create a data frame called output_3 with the name of activities done by subject. 
+      
+    output_3<-rbind(output_3,activity)
+    }
+    #Merges output_3 et output_2.
+    output_2<-cbind(output_3,output_2)
+    write.table(output_2,file="course_project.txt",row.name=FALSE)}
+    #The results is a data frame called course_project.txt with the average 
+    #of each variable for each activity and each subject. 
