@@ -1,6 +1,6 @@
 ##DATA DICTIONARY - Human Activity Recognition Using Smartphones Dataset
 
-ACTIVITY
+ACTIVITY:
 Activity name
 - WALKING.
 - WALKING_UPSTAIRS
@@ -9,204 +9,204 @@ Activity name
 - STANDING
 - LAYING
 
-SUBJECT
+SUBJECT:
 An identifier of the subject who carried out the experiment.
 Its range is from 1 to 30. 
 
-tBodyAcc.mean...X
+tBodyAcc.mean...X:
 Mean of time body acceleration X axis.
 
-tBodyAcc.mean...Y
+tBodyAcc.mean...Y:
 Mean of time body acceleration Y axis.
 
-tBodyAcc.mean...Z
+tBodyAcc.mean...Z:
 Mean of time body acceleration Z axis.
 
-tGravityAcc.mean...X
+tGravityAcc.mean...X:
 Mean of time gravity acceleration X axis.
 
-tGravityAcc.mean...Y
+tGravityAcc.mean...Y:
 Mean of time gravity acceleration Y axis.
 
-tGravityAcc.mean...Z
+tGravityAcc.mean...Z:
 Mean of time gravity acceleration Z axis.
 
-tBodyAccJerk.mean...X
+tBodyAccJerk.mean...X:
 Mean of time body acceleration Jerk X axis.
 
-tBodyAccJerk.mean...Y
+tBodyAccJerk.mean...Y:
 Mean of time body acceleration Jerk Y axis.
 
-tBodyAccJerk.mean...Z
+tBodyAccJerk.mean...Z:
 Mean of time body acceleration Jerk Z axis.
 
-tBodyGyro.mean...X
+tBodyGyro.mean...X:
 Mean of time body gyroscope X axis.
 
-tBodyGyro.mean...Y
+tBodyGyro.mean...Y:
 Mean of time body gyroscope Y axis.
 
-tBodyGyro.mean...Z
+tBodyGyro.mean...Z:
 Mean of time body gyroscope Z axis.
 
-tBodyGyroJerk.mean...X
+tBodyGyroJerk.mean...X:
 Mean of time body gyroscope Jerk X axis.
 
-tBodyGyroJerk.mean...Y
+tBodyGyroJerk.mean...Y:
 Mean of time body gyroscope Jerk Y axis.
 
-tBodyGyroJerk.mean...Z
+tBodyGyroJerk.mean...Z:
 Mean of time body gyroscope Jerk Z axis.
 
-tBodyAccMag.mean..
+tBodyAccMag.mean..:
 Mean of time body acceleration magnitude. 
 
-tGravityAccMag.mean..
+tGravityAccMag.mean..:
 Mean of time gravity acceleration magnitude.
 
-tBodyAccJerkMag.mean..
+tBodyAccJerkMag.mean..:
 Mean of time body acceleration Jerk magnitude.
 
-tBodyGyroMag.mean..
+tBodyGyroMag.mean..:
 Mean of time body gyroscope magnitude.
 
-tBodyGyroJerkMag.mean..
+tBodyGyroJerkMag.mean..:
 Mean of time body gyroscope Jerk magnitude.
 
-fBodyAcc.mean...X
+fBodyAcc.mean...X:
 Mean of frequency body acceleration X axis.
 
-fBodyAcc.mean...Y
+fBodyAcc.mean...Y:
 Mean of frequency body acceleration Y axis.
 
-fBodyAcc.mean...Z
+fBodyAcc.mean...Z:
 Mean of frequency body acceleration Z axis.
 
-fBodyAccJerk.mean...X
+fBodyAccJerk.mean...X:
 Mean of frequency body acceleration Jerk X axis.
 
-fBodyAccJerk.mean...Y
+fBodyAccJerk.mean...Y:
 Mean of frequency body acceleration Jerk Y axis.
 
-fBodyAccJerk.mean...Z
+fBodyAccJerk.mean...Z:
 Mean of frequency body acceleration Jerk Z axis.
 
-fBodyGyro.mean...X
+fBodyGyro.mean...X:
 Mean of frequency body gyroscope X axis.
 
-fBodyGyro.mean...Y
+fBodyGyro.mean...Y:
 Mean of frequency body gyroscope Y axis.
 
-fBodyGyro.mean...Z
+fBodyGyro.mean...Z:
 Mean of frequency body gyroscope Z axis.
 
-fBodyAccMag.mean..
+fBodyAccMag.mean..:
 Mean of frequency acceleration magnitude.
 
-fBodyBodyAccJerkMag.mean..
+fBodyBodyAccJerkMag.mean..:
 Mean of frequency body acceleration Jerk magnitude.
 
-fBodyBodyGyroMag.mean..
+fBodyBodyGyroMag.mean..:
 Mean of frequency body gyroscope magnitude.
 
-fBodyBodyGyroJerkMag.mean..
+fBodyBodyGyroJerkMag.mean..:
 Mean of frequency body gyroscope Jerk magnitude.
 
-tBodyAcc.std...X
+tBodyAcc.std...X:
 Standard deviation of time body acceleration X axis.
 
-tBodyAcc.std...Y
+tBodyAcc.std...Y:
 Standard deviation of time body acceleration Y axis.
 
-tBodyAcc.std...Z
+tBodyAcc.std...Z:
 Standard deviation of time body acceleration Z axis.
 
-tGravityAcc.std...X
+tGravityAcc.std...X:
 Standard deviation of time gravity acceleration X axis.
 
-tGravityAcc.std...Y
+tGravityAcc.std...Y:
 Standard deviation of time gravity acceleration Y axis.
 
-tGravityAcc.std...Z
+tGravityAcc.std...Z:
 Standard deviation of time gravity acceleration Z axis.
 
-tBodyAccJerk.std...X
+tBodyAccJerk.std...X:
 Standard deviation of time acceleration Jerk X axis.
 
-tBodyAccJerk.std...Y
+tBodyAccJerk.std...Y:
 Standard deviation of time acceleration Jerk Y axis.
 
-tBodyAccJerk.std...Z
+tBodyAccJerk.std...Z:
 Standard deviation of time acceleration Jerk Z axis.
 
-tBodyGyro.std...X
+tBodyGyro.std...X:
 Standard deviation of time body gyroscope X axis.
 
-tBodyGyro.std...Y
+tBodyGyro.std...Y:
 Standard deviation of time body gyroscope Y axis.
 
-tBodyGyro.std...Z
+tBodyGyro.std...Z:
 Standard deviation of time body gyroscope Z axis.
 
-tBodyGyroJerk.std...X
+tBodyGyroJerk.std...X:
 Standard deviation of time body gyroscope Jerk X axis.
 
-tBodyGyroJerk.std...Y
+tBodyGyroJerk.std...Y:
 Standard deviation of time body gyroscope Jerk Y axis.
 
-tBodyGyroJerk.std...Z
+tBodyGyroJerk.std...Z:
 Standard deviation of time body gyroscope Jerk Z axis.
 
-tBodyAccMag.std..
+tBodyAccMag.std..:
 Standard deviation of time body acceleration magnitude.
 
-tGravityAccMag.std..
+tGravityAccMag.std..:
 Standard deviation of time gravity acceleration magnitude.
 
-tBodyAccJerkMag.std..
+tBodyAccJerkMag.std..:
 Standard deviation of time body acceleration Jerk Magnitude.
 
-tBodyGyroMag.std..
+tBodyGyroMag.std..:
 Standard deviation of time body gyroscope magnitude.
 
-tBodyGyroJerkMag.std..
+tBodyGyroJerkMag.std..:
 Standard deviation of time body gyroscope magnitude.
 
-fBodyAcc.std...X
+fBodyAcc.std...X:
 Standard deviation of frequency body acceleration X axis.
 
-fBodyAcc.std...Y
+fBodyAcc.std...Y:
 Standard deviation of frequency body acceleration Y axis.
 
-fBodyAcc.std...Z
+fBodyAcc.std...Z:
 Standard deviation of frequency body acceleration Z axis.
 
-fBodyAccJerk.std...X
+fBodyAccJerk.std...X:
 Standard deviation of frequency body acceleration Jerk X axis.
 
-fBodyAccJerk.std...Y
+fBodyAccJerk.std...Y:
 Standard deviation of frequency body acceleration Jerk Y axis.
 
-fBodyAccJerk.std...Z
+fBodyAccJerk.std...Z:
 Standard deviation of frequency body acceleration Jerk Z axis.
 
-fBodyGyro.std...X
+fBodyGyro.std...X:
 Standard deviation of frequency body gyroscope X axis.
 
-fBodyGyro.std...Y
+fBodyGyro.std...Y:
 Standard deviation of frequency body gyroscope Y axis.
 
-fBodyGyro.std...Z
+fBodyGyro.std...Z:
 Standard deviation of frequency body gyroscope Z axis.
 
-fBodyAccMag.std..
+fBodyAccMag.std..:
 Standard deviation of frequency acceleration magnitude.
 
-fBodyBodyAccJerkMag.std..
+fBodyBodyAccJerkMag.std..:
 Standard deviation of frequency body acceleration Jerk magnitude.
 
-fBodyBodyGyroMag.std..
+fBodyBodyGyroMag.std..:
 Standard deviation of frequency body gyroscope magnitude.
 
-fBodyBodyGyroJerkMag.std..
+fBodyBodyGyroJerkMag.std..:
 Standard deviation of frequency body gyroscpe Jerk magnitude. 
