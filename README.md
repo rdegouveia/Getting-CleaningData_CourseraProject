@@ -16,11 +16,14 @@ There are two other files called activity_labels.txt with the list of activities
 
 
 ##FUNCTION
-The following function creates a table with the average of each variable for each activity and each subject.
+The following function creates a data frame with the average of each variable for each activity and each subject. Before calculating the average the function:
+1st: merges train and test set,  renames columns and activities.
+2nd: extracts the measurements on the mean and standard deviation for each measurement
+3rd: and then calculate the average of each variable, for each activity and each subject. 
 
-The function merges train and test set as follows:
+1st: The function merges train and test set as follows:
 
-1st: The function merges the train set. It means the tables: X_train,y_train, replacing y_train with the activities names and replacing column's names of X_train with names from features.txt. 
+The function merges the train set. It means the tables: X_train,y_train, replacing y_train with the activities names and replacing column's names of X_train with names from features.txt. 
 
 It creates a data frame called output with the names of activities instead of labels given by table y_train.txt. Then it merges subject_train.txt and output as follows:
 
@@ -88,7 +91,7 @@ It creates subset with column's names of X_train. It creates a subset with the 2
     #with subjects, variables measured and activities from train set:
     output<-cbind(output,X_train)
 
-2nd: then the function merges the test set. It means the tables: X_test,y_test, replacing y_test with the activities names and replacing column's names of X_test with names from features.txt. Same steps saw above but in this case with files from test set.
+Then the function merges the test set. It means the tables: X_test,y_test, replacing y_test with the activities names and replacing column's names of X_test with names from features.txt. Same steps saw above but in this case with files from test set.
 
 <!-- -->
 
@@ -138,4 +141,13 @@ It creates subset with column's names of X_train. It creates a subset with the 2
 
 Finally the function merges output and output_1. The results is a data frame called mergedata with train and test sets. All columns were renamed with the features.txt file and labels from y_train.txt and y_test.txt files were renamed with the activities names. 
 
+The function
 
+<!-- -->
+
+col_subject<-as.data.frame(mergedata[,1:1])
+  col_activity<-as.data.frame(mergedata[,2:2])
+  colnames(col_subject)<-c("Subject")
+  colnames(col_activity)<-c("Activity")
+  df<-subset(mergedata,select=c(grep("mean..",colnames(mergedata),fixed=T,value=T),grep("std..",colnames(mergedata),fixed=T,value=T)))
+  df1<-cbind(col_subject,col_activity,df)
