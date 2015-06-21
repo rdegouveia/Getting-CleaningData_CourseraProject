@@ -154,8 +154,8 @@ Finally the function merges output and output_1. The results is a data frame cal
      colnames(col_subject)<-c("Subject")
      colnames(col_activity)<-c("Activity")
      
-     #The function creates a subset called df from mergedata in which colnames has the words "mean.." or "std..".
+     #The function creates a subset called df from mergedata in which the column's names have the words: "mean.." or "std..".
      df<-subset(mergedata,select=c(grep("mean..",colnames(mergedata),fixed=T,value=T),grep("std..",colnames(mergedata),fixed=      T,value=T)))
      
-     #The merges the subjects, activities and the subset df.
+     #The merges the subjects, activities and the subset df as follows:
      df1<-cbind(col_subject,col_activity,df)
