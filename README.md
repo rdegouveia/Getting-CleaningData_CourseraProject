@@ -33,8 +33,9 @@ It creates a data frame called output with the names of activities instead of la
      Y_train<-read.table("./UCI HAR Dataset/train/Y_train.txt",header=F)
      output<-vector()
      
-     #It evaluates each line of Y_train then creates a vector called output with the activities names. If Y_train[i,1]==1 then
-     #the activity will be "Walking", if Y_train[i,1]==2 activity will be "Walking_Uptairs", etc.
+     #It evaluates each line of Y_train then creates a vector called output with the activities names. 
+     #If Y_train[i,1]==1 then the activity will be "Walking", if Y_train[i,1]==2 
+     #activity will be "Walking_Uptairs", etc.
      
      For (i in 1:nrow(Y_train)){
        value_Ytrain<-Y_train[i,1]
