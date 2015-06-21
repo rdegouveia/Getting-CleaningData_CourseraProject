@@ -166,7 +166,7 @@ Finally the function merges output and output_1. The results is a data frame cal
 
     activity_labels<-read.table("./UCI HAR Dataset/activity_labels.txt",header=F)
     activity<-as.data.frame(activity_labels[,2])
-    #Creates a subset from 2nd of activity_labels.
+    #Creates a subset from 2nd column of activity_labels.
     colnames(activity)<-c("Activity")
     output_2<-data.frame()
     output_3<-data.frame()
