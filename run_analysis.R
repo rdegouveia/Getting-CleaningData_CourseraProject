@@ -1,3 +1,4 @@
+#If you run this code in R, please split it in two parts for better functioning. 
 run_analysis<-function(){
   features<-read.table("./UCI HAR Dataset/features.txt",header=F)
   subject_train<-read.table("./UCI HAR Dataset/train/subject_train.txt",header=F)
